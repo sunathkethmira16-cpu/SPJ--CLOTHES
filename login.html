@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | SPJ Clothes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .login-bg {
+            background-image: url('https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2000&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body class="antialiased h-screen flex flex-col bg-gray-50">
+
+    <!-- Simple Nav for Login Page -->
+    <nav class="absolute w-full z-50 top-0 bg-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="text-3xl font-extrabold tracking-tighter text-white drop-shadow-md">
+                        SPJ<span style="color: var(--accent-color)">.</span>
+                    </a>
+                </div>
+                <a href="index.html"
+                    class="text-white hover:text-gray-200 transition font-medium flex items-center gap-2 drop-shadow-md">
+                    <i class="fa-solid fa-arrow-left"></i> Back to Store
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="flex-1 flex login-bg relative">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+
+        <div class="flex-1 flex items-center justify-center p-4 relative z-10 w-full animate-fade-in">
+            <div
+                class="bg-white/95 backdrop-blur-xl w-full max-w-md rounded-3xl shadow-2xl overflow-hidden border border-white/20">
+
+                <!-- Login specific content -->
+                <div class="p-8 sm:p-12">
+                    <div class="text-center mb-8">
+                        <h2 class="text-3xl font-extrabold text-gray-900 tracking-tight">Welcome Back</h2>
+                        <p class="text-gray-500 mt-2 text-sm">Sign in to your SPJ account to continue.</p>
+                    </div>
+
+                    <form onsubmit="event.preventDefault(); window.location.href='index.html';" class="space-y-6">
+
+                        <div>
+                            <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">Email
+                                Address</label>
+                            <div class="relative">
+                                <i class="fa-regular fa-envelope absolute left-4 top-3.5 text-gray-400"></i>
+                                <input type="email" id="email" required
+                                    class="w-full pl-11 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#c9933b]/30 focus:border-[#c9933b] transition-all text-sm placeholder-gray-400"
+                                    placeholder="hello@example.com">
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <label for="password" class="block text-sm font-semibold text-gray-700">Password</label>
+                                <a href="#" class="text-xs font-medium text-[#c9933b] hover:underline">Forgot
+                                    password?</a>
+                            </div>
+                            <div class="relative">
+                                <i class="fa-solid fa-lock absolute left-4 top-3.5 text-gray-400 text-sm"></i>
+                                <input type="password" id="password" required
+                                    class="w-full pl-11 pr-10 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#c9933b]/30 focus:border-[#c9933b] transition-all text-sm placeholder-gray-400"
+                                    placeholder="••••••••">
+                                <button type="button"
+                                    class="absolute right-4 top-3.5 text-gray-400 hover:text-gray-600 focus:outline-none"
+                                    onclick="togglePassword()">
+                                    <i class="fa-regular fa-eye" id="eye-icon"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center">
+                            <input type="checkbox" id="remember"
+                                class="w-4 h-4 rounded text-[#c9933b] focus:ring-[#c9933b] border-gray-300">
+                            <label for="remember" class="ml-2 block text-sm text-gray-700">Remember me</label>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full btn-primary py-4 rounded-xl font-bold shadow-lg shadow-gray-900/10 transition-all flex justify-center items-center gap-2">
+                            Sign In <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </button>
+                    </form>
+
+                    <div class="mt-8 pt-6 border-t border-gray-100">
+                        <div class="relative text-center">
+                            <span
+                                class="bg-white px-2 text-xs text-gray-500 uppercase tracking-wider font-semibold relative -top-[34px]">Or
+                                continue with</span>
+
+                            <div class="flex grid grid-cols-2 gap-4 mt-[-10px]">
+                                <button
+                                    class="flex items-center justify-center gap-2 w-full py-2.5 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
+                                        alt="Google" class="w-4 h-4">
+                                    <span class="text-sm font-medium text-gray-700">Google</span>
+                                </button>
+                                <button
+                                    class="flex items-center justify-center gap-2 w-full py-2.5 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors">
+                                    <i class="fa-brands fa-apple text-lg"></i>
+                                    <span class="text-sm font-medium text-gray-700">Apple</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <p class="mt-8 text-center text-sm text-gray-600">
+                            Don't have an account? <a href="#" class="font-bold text-[#c9933b] hover:underline">Sign up
+                                now</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        function togglePassword() {
+            const pwd = document.getElementById('password');
+            const icon = document.getElementById('eye-icon');
+            if (pwd.type === 'password') {
+                pwd.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                pwd.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        }
+    </script>
+</body>
+
+</html>

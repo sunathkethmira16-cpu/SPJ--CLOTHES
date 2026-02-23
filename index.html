@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPJ Clothes - Premium Men's Fashion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 antialiased">
+
+    <!-- Navigation -->
+    <nav class="glass-nav fixed w-full z-50 top-0 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="text-3xl font-extrabold tracking-tighter" style="color: var(--primary-color);">
+                        SPJ<span style="color: var(--accent-color)">.</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center font-medium">
+                    <a href="index.html" class="text-gray-900 hover:text-[#c9933b] transition-colors">Home</a>
+                    <a href="shop.html" class="text-gray-500 hover:text-[#c9933b] transition-colors">Shop All</a>
+                    <a href="shop.html?category=clothing" class="text-gray-500 hover:text-[#c9933b] transition-colors">Clothing</a>
+                    <a href="shop.html?category=perfumes" class="text-gray-500 hover:text-[#c9933b] transition-colors">Perfumes</a>
+                    <a href="shop.html?category=belts" class="text-gray-500 hover:text-[#c9933b] transition-colors">Accessories</a>
+                </div>
+
+                <!-- Right Icons -->
+                <div class="flex items-center space-x-5">
+                    <a href="shop.html" class="text-gray-600 hover:text-[#c9933b] transition-colors">
+                        <i class="fa-solid fa-magnifying-glass text-lg"></i>
+                    </a>
+                    <a href="login.html" class="text-gray-600 hover:text-[#c9933b] transition-colors">
+                        <i class="fa-regular fa-user text-lg"></i>
+                    </a>
+                    <a href="cart.html" class="relative text-gray-600 hover:text-[#c9933b] transition-colors group">
+                        <i class="fa-solid fa-bag-shopping text-xl"></i>
+                        <span class="cart-count absolute -top-2 -right-2 bg-red-500 text-white text-[10px] font-bold h-4 w-4 rounded-full flex items-center justify-center hidden">0</span>
+                    </a>
+                    <!-- Mobile Menu Button -->
+                    <button class="md:hidden text-gray-600 hover:text-[#c9933b] text-xl" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="index.html" class="block px-3 py-3 text-base font-semibold text-gray-900 hover:bg-gray-50">Home</a>
+                <a href="shop.html" class="block px-3 py-3 text-base font-medium text-gray-600 hover:bg-gray-50">Shop All</a>
+                <a href="shop.html?category=clothing" class="block px-3 py-3 text-base font-medium text-gray-600 hover:bg-gray-50">Clothing</a>
+                <a href="shop.html?category=perfumes" class="block px-3 py-3 text-base font-medium text-gray-600 hover:bg-gray-50">Perfumes</a>
+                <a href="shop.html?category=belts" class="block px-3 py-3 text-base font-medium text-gray-600 hover:bg-gray-50">Accessories</a>
+                <div class="border-t border-gray-100 my-2 pt-2">
+                    <a href="login.html" class="block px-3 py-3 text-base font-medium text-[#c9933b]">Login / Register</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center hero-bg overflow-hidden pt-20">
+        <div class="absolute inset-0 hero-overlay"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left text-white animate-fade-in w-full flex flex-col items-center sm:items-start">
+            <span class="uppercase tracking-[0.3em] font-semibold text-sm mb-4" style="color: var(--accent-color)">New Collection 2026</span>
+            <h1 class="text-5xl sm:text-7xl font-extrabold mb-6 leading-tight max-w-2xl">Elevate Your<br>Everyday Style.</h1>
+            <p class="text-lg sm:text-xl text-gray-300 mb-10 max-w-xl font-light">Discover premium men's clothing, signature perfumes, and exclusive accessories crafted for the modern gentleman.</p>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="shop.html" class="btn-accent px-8 py-4 rounded-full text-lg font-semibold shadow-lg shadow-[#c9933b]/20">Shop Collection</a>
+                <a href="shop.html?category=perfumes" class="bg-white/10 hover:bg-white/20 backdrop-blur-md px-8 py-4 rounded-full text-lg font-semibold transition border border-white/30 text-white">Explore Fragrances</a>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce opacity-70">
+            <span class="text-xs uppercase tracking-widest text-white mb-2">Scroll Down</span>
+            <i class="fa-solid fa-arrow-down text-white"></i>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Shop by Category</h2>
+                <div class="h-1 w-20 mx-auto mt-4 rounded" style="background-color: var(--accent-color)"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Clothing -->
+                <a href="shop.html?category=clothing" class="group relative h-[400px] overflow-hidden rounded-2xl block">
+                    <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="Men's Clothing">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full">
+                        <h3 class="text-white text-2xl font-bold mb-2">Clothing</h3>
+                        <p class="text-gray-300 text-sm group-hover:text-[#c9933b] transition duration-300 flex items-center gap-2">View Items <i class="fa-solid fa-arrow-right text-xs"></i></p>
+                    </div>
+                </a>
+                
+                <!-- Perfumes -->
+                <a href="shop.html?category=perfumes" class="group relative h-[400px] overflow-hidden rounded-2xl block">
+                    <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="Perfumes">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full">
+                        <h3 class="text-white text-2xl font-bold mb-2">Perfumes</h3>
+                        <p class="text-gray-300 text-sm group-hover:text-[#c9933b] transition duration-300 flex items-center gap-2">View Items <i class="fa-solid fa-arrow-right text-xs"></i></p>
+                    </div>
+                </a>
+                
+                <!-- Belts -->
+                <a href="shop.html?category=belts" class="group relative h-[400px] overflow-hidden rounded-2xl block">
+                    <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="Belts">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full">
+                        <h3 class="text-white text-2xl font-bold mb-2">Belts</h3>
+                        <p class="text-gray-300 text-sm group-hover:text-[#c9933b] transition duration-300 flex items-center gap-2">View Items <i class="fa-solid fa-arrow-right text-xs"></i></p>
+                    </div>
+                </a>
+                
+                <!-- Slippers -->
+                <a href="shop.html?category=slippers" class="group relative h-[400px] overflow-hidden rounded-2xl block">
+                    <img src="https://images.unsplash.com/photo-1595185913508-faec1bcbb950?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="Slippers">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full">
+                        <h3 class="text-white text-2xl font-bold mb-2">Slippers</h3>
+                        <p class="text-gray-300 text-sm group-hover:text-[#c9933b] transition duration-300 flex items-center gap-2">View Items <i class="fa-solid fa-arrow-right text-xs"></i></p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col sm:flex-row justify-between items-end mb-12">
+                <div>
+                    <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Trending Now</h2>
+                    <p class="mt-4 text-gray-500">Discover our most sought-after pieces.</p>
+                </div>
+                <a href="shop.html" class="hidden sm:inline-flex items-center gap-2 font-semibold hover:gap-3 transition-all" style="color: var(--accent-color)">
+                    View All Products <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8" id="featured-products">
+                <!-- Products will be injected here by JS -->
+            </div>
+            
+            <div class="mt-12 text-center sm:hidden">
+                <a href="shop.html" class="btn-primary inline-block px-8 py-3 rounded-full font-semibold w-full">View All</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-20 relative overflow-hidden" style="background-color: var(--primary-color);">
+        <div class="absolute -right-40 -top-40 w-96 h-96 rounded-full opacity-10 blur-3xl" style="background-color: var(--accent-color);"></div>
+        <div class="absolute -left-40 -bottom-40 w-96 h-96 rounded-full opacity-10 blur-3xl" style="background-color: var(--accent-color);"></div>
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">Join the SPJ Club</h2>
+            <p class="text-gray-400 mb-10 max-w-2xl mx-auto">Subscribe for exclusive access to new collections, special offers, and styling tips from our experts.</p>
+            <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto" onsubmit="event.preventDefault(); alert('Subscribed successfully!');">
+                <input type="email" placeholder="Enter your email address" required class="flex-1 px-6 py-4 rounded-full bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-[#c9933b] focus:ring-1 focus:ring-[#c9933b] transition-all">
+                <button type="submit" class="btn-accent px-8 py-4 rounded-full font-bold">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white pt-20 pb-10 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-1">
+                    <a href="index.html" class="text-3xl font-extrabold tracking-tighter mb-6 block" style="color: var(--primary-color);">
+                        SPJ<span style="color: var(--accent-color)">.</span>
+                    </a>
+                    <p class="text-gray-500 mb-6 w-3/4">Defining modern elegance with premium selections of men's wear and accessories.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-[#c9933b] hover:text-white transition-all"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-[#c9933b] hover:text-white transition-all"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-[#c9933b] hover:text-white transition-all"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-gray-900 mb-6">Shop</h4>
+                    <ul class="space-y-4">
+                        <li><a href="shop.html?category=clothing" class="text-gray-500 hover:text-[#c9933b] transition">Men's Clothing</a></li>
+                        <li><a href="shop.html?category=perfumes" class="text-gray-500 hover:text-[#c9933b] transition">Perfumes</a></li>
+                        <li><a href="shop.html?category=belts" class="text-gray-500 hover:text-[#c9933b] transition">Premium Belts</a></li>
+                        <li><a href="shop.html?category=slippers" class="text-gray-500 hover:text-[#c9933b] transition">Slippers & Shoes</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-gray-900 mb-6">Company</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="text-gray-500 hover:text-[#c9933b] transition">About Us</a></li>
+                        <li><a href="#" class="text-gray-500 hover:text-[#c9933b] transition">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-500 hover:text-[#c9933b] transition">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-500 hover:text-[#c9933b] transition">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-gray-900 mb-6">Contact</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start space-x-3 text-gray-500">
+                            <i class="fa-solid fa-location-dot mt-1 text-[#c9933b]"></i>
+                            <span>152 Fashion Avenue<br>Colombo, Sri Lanka</span>
+                        </li>
+                        <li class="flex items-center space-x-3 text-gray-500">
+                            <i class="fa-solid fa-phone text-[#c9933b]"></i>
+                            <span>+94 11 234 5678</span>
+                        </li>
+                        <li class="flex items-center space-x-3 text-gray-500">
+                            <i class="fa-solid fa-envelope text-[#c9933b]"></i>
+                            <span>info@spjclothes.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">© 2026 SPJ Clothes. All rights reserved.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0 text-xl text-gray-300">
+                    <i class="fa-brands fa-cc-visa"></i>
+                    <i class="fa-brands fa-cc-mastercard"></i>
+                    <i class="fa-brands fa-cc-paypal"></i>
+                    <i class="fa-brands fa-cc-apple-pay"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('featured-products');
+            // Show only first 4 products for featured section
+            const featuredList = products.slice(0, 4);
+            container.innerHTML = featuredList.map(p => generateProductCard(p)).join('');
+            
+            // Highlight current mobile active link
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => {
+                if (link.href === window.location.href) {
+                    if(!link.classList.contains('text-3xl')) {
+                        link.classList.add('text-[#c9933b]');
+                        link.classList.remove('text-gray-500');
+                        link.classList.remove('text-gray-600');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

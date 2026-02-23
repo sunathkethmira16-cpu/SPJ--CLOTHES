@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart | SPJ Clothes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-gray-50 antialiased min-h-screen flex flex-col">
+
+    <!-- Navigation -->
+    <nav class="glass-nav fixed w-full z-50 top-0 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="text-3xl font-extrabold tracking-tighter"
+                        style="color: var(--primary-color);">
+                        SPJ<span style="color: var(--accent-color)">.</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center font-medium">
+                    <a href="index.html" class="text-gray-500 hover:text-[#c9933b] transition-colors">Home</a>
+                    <a href="shop.html" class="text-gray-500 hover:text-[#c9933b] transition-colors">Shop All</a>
+                    <a href="shop.html?category=clothing"
+                        class="text-gray-500 hover:text-[#c9933b] transition-colors">Clothing</a>
+                    <a href="shop.html?category=perfumes"
+                        class="text-gray-500 hover:text-[#c9933b] transition-colors">Perfumes</a>
+                    <a href="shop.html?category=belts"
+                        class="text-gray-500 hover:text-[#c9933b] transition-colors">Accessories</a>
+                </div>
+
+                <!-- Right Icons -->
+                <div class="flex items-center space-x-5">
+                    <a href="shop.html" class="text-gray-600 hover:text-[#c9933b] transition-colors">
+                        <i class="fa-solid fa-magnifying-glass text-lg"></i>
+                    </a>
+                    <a href="login.html" class="text-gray-600 hover:text-[#c9933b] transition-colors">
+                        <i class="fa-regular fa-user text-lg"></i>
+                    </a>
+                    <a href="cart.html" class="relative text-[#c9933b] transition-colors group">
+                        <i class="fa-solid fa-bag-shopping text-xl"></i>
+                        <span
+                            class="cart-count absolute -top-2 -right-2 bg-red-500 text-white text-[10px] font-bold h-4 w-4 rounded-full flex items-center justify-center hidden">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="pt-32 pb-10 bg-white border-b border-gray-100 flex-none">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in">
+            <h1 class="text-3xl font-extrabold text-gray-900 mb-2 tracking-tight">Shopping Cart</h1>
+            <p class="text-gray-500 max-w-2xl mx-auto text-sm">Review your selected items before checkout.</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
+
+        <div class="flex flex-col lg:flex-row gap-12" id="cart-content">
+            <!-- Cart Items -->
+            <div class="flex-grow animate-fade-in delay-100">
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                    <div
+                        class="p-6 border-b border-gray-100 bg-gray-50/50 flex justify-between items-center hidden sm:flex">
+                        <h3 class="font-bold text-gray-700 w-1/2">Product Information</h3>
+                        <div class="flex justify-between w-1/2 px-4 text-center">
+                            <h3 class="font-bold text-gray-700 w-1/3">Price</h3>
+                            <h3 class="font-bold text-gray-700 w-1/3">Quantity</h3>
+                            <h3 class="font-bold text-gray-700 w-1/3 text-right">Total</h3>
+                        </div>
+                    </div>
+
+                    <div id="cart-items" class="divide-y divide-gray-100"></div>
+                </div>
+
+                <div class="mt-8">
+                    <a href="shop.html"
+                        class="text-gray-600 hover:text-[#c9933b] font-medium transition flex items-center gap-2 group">
+                        <i class="fa-solid fa-arrow-left transform group-hover:-translate-x-1 transition"></i>
+                        Continue Shopping
+                    </a>
+                </div>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="w-full lg:w-96 flex-shrink-0 animate-fade-in delay-200">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 sticky top-28">
+                    <h2 class="text-xl font-bold text-gray-900 mb-6 border-b border-gray-100 pb-4">Order Summary</h2>
+
+                    <div class="space-y-4 mb-6 text-gray-600">
+                        <div class="flex justify-between items-center">
+                            <span>Subtotal (<span id="summary-items">0</span> items)</span>
+                            <span class="font-medium text-gray-900 font-mono" id="summary-subtotal">Rs. 0.00</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span>Shipping</span>
+                            <span class="text-[#c9933b] text-sm font-semibold uppercase tracking-wider">Free</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span>Tax (10%)</span>
+                            <span class="font-medium text-gray-900 font-mono" id="summary-tax">Rs. 0.00</span>
+                        </div>
+                    </div>
+
+                    <div class="border-t border-gray-100 pt-6 mb-8">
+                        <div class="flex justify-between items-end">
+                            <span class="text-lg font-bold text-gray-900">Total</span>
+                            <div class="text-right">
+                                <span class="text-sm text-gray-500 block mb-1">LKR</span>
+                                <span class="text-3xl font-extrabold text-gray-900 font-mono" id="summary-total">Rs.
+                                    0.00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button
+                        class="btn-primary w-full py-4 rounded-full font-bold text-lg shadow-xl mb-4 group flex items-center justify-center gap-4 transition-all"
+                        onclick="alert('Proceeding to checkout engine...')">
+                        <i class="fa-solid fa-lock text-sm opacity-50"></i> Secure Checkout
+                    </button>
+
+                    <div class="flex justify-center items-center gap-6 mt-6 opacity-30 justify-center">
+                        <i class="fa-brands fa-cc-visa text-3xl"></i>
+                        <i class="fa-brands fa-cc-mastercard text-3xl"></i>
+                        <i class="fa-brands fa-cc-paypal text-3xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Empty Cart State -->
+        <div id="empty-cart" class="hidden text-center py-20 flex flex-col items-center animate-fade-in">
+            <div class="w-24 h-24 bg-gray-50 rounded-full flex items-center justify-center text-4xl text-gray-300 mb-6">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Your cart is empty</h2>
+            <p class="text-gray-500 mb-8 max-w-sm">Looks like you haven't added anything to your cart yet. Discover our
+                premium collections.</p>
+            <a href="shop.html" class="btn-primary px-8 py-4 rounded-full font-bold shadow-lg">Start Shopping</a>
+        </div>
+
+    </main>
+
+    <footer class="bg-white pt-8 pb-8 border-t border-gray-100 mt-auto flex-none">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-gray-400 text-sm">© 2026 SPJ Clothes. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCartPage();
+
+            // Re-render when cart is updated from global functions
+            document.addEventListener('cartUpdated', () => {
+                renderCartPage();
+            });
+        });
+
+        function renderCartPage() {
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartContent = document.getElementById('cart-content');
+            const emptyCart = document.getElementById('empty-cart');
+
+            const summaryItems = document.getElementById('summary-items');
+            const summarySubtotal = document.getElementById('summary-subtotal');
+            const summaryTax = document.getElementById('summary-tax');
+            const summaryTotal = document.getElementById('summary-total');
+
+            if (cart.length === 0) {
+                cartContent.classList.add('hidden');
+                emptyCart.classList.remove('hidden');
+                return;
+            }
+
+            cartContent.classList.remove('hidden');
+            emptyCart.classList.add('hidden');
+            cartContent.classList.add('flex');
+
+            let subtotal = 0;
+            let totalItems = 0;
+
+            cartItemsContainer.innerHTML = cart.map(item => {
+                const itemTotal = item.price * item.quantity;
+                subtotal += itemTotal;
+                totalItems += item.quantity;
+
+                return `
+                    <div class="p-4 sm:p-6 flex flex-col sm:flex-row items-center gap-6 group hover:bg-gray-50/30 transition-colors">
+                        <!-- Product Info -->
+                        <div class="flex items-center gap-4 w-full sm:w-1/2">
+                            <div class="w-20 h-24 sm:w-24 sm:h-28 flex-shrink-0 rounded-xl overflow-hidden border border-gray-100 shadow-sm relative">
+                                <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover">
+                                <span class="absolute bottom-1 left-1 bg-white/90 backdrop-blur-sm text-[10px] font-bold px-2 py-0.5 rounded-md text-gray-600 uppercase">
+                                    ${item.category}
+                                </span>
+                            </div>
+                            <div class="flex-grow">
+                                <h4 class="font-bold text-gray-900 text-sm sm:text-lg mb-1 line-clamp-2 pr-4 leading-tight">${item.name}</h4>
+                                <button onclick="removeFromCart(${item.id})" class="text-xs font-semibold text-red-500 hover:text-red-700 transition flex items-center gap-1 mt-2 bg-red-50 hover:bg-red-100 px-3 py-1.5 rounded-md">
+                                    <i class="fa-regular fa-trash-can"></i> Remove
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Price, Qty, Total -->
+                        <div class="flex justify-between items-center w-full sm:w-1/2 sm:px-4">
+                            <!-- Mobile Labels -->
+                            <div class="sm:hidden flex flex-col gap-2 font-medium text-gray-500 text-sm">
+                                <span>Price:</span>
+                                <span>Qty:</span>
+                                <span>Total:</span>
+                            </div>
+                            
+                            <div class="font-mono font-medium text-gray-500 w-1/3 text-right sm:text-center text-sm sm:text-base">
+                                Rs. ${item.price.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                            </div>
+                            
+                            <div class="w-1/3 flex justify-end sm:justify-center">
+                                <div class="flex items-center bg-gray-100 rounded-full border border-gray-200">
+                                    <button onclick="updateQuantity(${item.id}, -1)" class="w-8 h-8 flex items-center justify-center text-gray-600 hover:text-gray-900 transition-colors rounded-l-full hover:bg-gray-200 active:bg-gray-300">
+                                        <i class="fa-solid fa-minus text-xs"></i>
+                                    </button>
+                                    <span class="w-8 text-center font-bold text-gray-900 text-sm">${item.quantity}</span>
+                                    <button onclick="updateQuantity(${item.id}, 1)" class="w-8 h-8 flex items-center justify-center text-gray-600 hover:text-gray-900 transition-colors rounded-r-full hover:bg-gray-200 active:bg-gray-300">
+                                        <i class="fa-solid fa-plus text-xs"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="font-mono font-bold text-gray-900 w-1/3 text-right text-base sm:text-lg">
+                                Rs. ${itemTotal.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            const tax = subtotal * 0.10;
+            const total = subtotal + tax;
+
+            summaryItems.innerText = totalItems;
+            summarySubtotal.innerText = `Rs. ${subtotal.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+            summaryTax.innerText = `Rs. ${tax.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+            summaryTotal.innerText = `Rs. ${total.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+        }
+    </script>
+</body>
+
+</html>
